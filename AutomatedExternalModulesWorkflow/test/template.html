@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{testFileName}} tests</title>
+    <link rel="stylesheet" href="{{wwwrootPath}}/lib/qunit-css/index.css" />
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    {{! Libraries could also be hardcoded here in the template, using a path starting in "wwwrootPath" (as done with the css file) }}
+    {{#each testLibraries}}
+    <script src="{{this}}"></script>
+    {{/each}}
+
+    {{! Dependencies should be just test supporting code, since all production code will use external modules }}
+    {{#each dependencies}}
+    <script src="{{this}}"></script>
+    {{/each}}
+    
+    {{! Use require.js to load qunit, your test and then start qunit }}
+    {{! Based on http://stackoverflow.com/questions/29435486/how-to-setup-grunt-task-for-requirejs-and-qunit }}
+    <script>
+        requirejs.config({
+            paths: {
+                'qunit': '{{wwwrootPath}}/lib/qunit/index'
+            }
+        });
+
+        require([
+          'qunit',
+          '{{testFileName}}'
+        ],
+        function (QUnit, test) {
+            QUnit.start();
+        });
+    </script>    
+</body>
+</html>

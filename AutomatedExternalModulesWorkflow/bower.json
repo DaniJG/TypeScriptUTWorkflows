@@ -1,0 +1,14 @@
+{
+	"name": "ASP.NET",
+	"private": true,
+  "dependencies": {
+    "jquery": "2.1.4"
+  },  
+  "devDependencies": {
+    "qunit": "http://code.jquery.com/qunit/qunit-1.19.0.js",
+    "qunit-css": "http://code.jquery.com/qunit/qunit-1.19.0.css",
+    "sinon": "http://sinonjs.org/releases/sinon-1.17.1.js",
+    "sinon-qunit": "http://sinonjs.org/releases/sinon-qunit-1.0.0.js",
+    "require": "http://requirejs.org/docs/release/2.1.20/comments/require.js"
+  }
+}
