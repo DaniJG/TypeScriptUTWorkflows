@@ -10,6 +10,8 @@ PublishProfiles/
 .vs/
 bower_components/
 node_modules/
+temp/
+.baseDir.ts
 **/wwwroot/lib/
 **/wwwroot/script/
 debugSettings.json
